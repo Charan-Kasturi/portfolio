@@ -4,38 +4,81 @@ body {
     margin: 0;
     padding: 0;
 }
-header, footer {
+
+header,
+footer {
     background: #333;
     color: #fff;
     text-align: center;
     padding: 1rem 0;
 }
+
+header h1 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    color: white;
+    font-size: 0.9rem;
+}
+
+header a,
+header span {
+    color: white;
+    text-decoration: none;
+}
+
 nav {
     text-align: center;
     background: #444;
     padding: 0.5rem;
 }
+
 nav a {
     color: white;
     text-decoration: none;
     margin: 0 1rem;
 }
+
+nav a:hover {
+    text-decoration: underline;
+}
+
 section {
     padding: 2rem;
     max-width: 800px;
     margin: auto;
 }
-h1, h2 {
+
+h1,
+h2 {
     color: #333;
 }
+
 ul {
     list-style-type: none;
     padding: 0;
 }
+
 li {
     margin-bottom: 1rem;
 }
+
 footer {
     margin-top: 2rem;
     font-size: 0.8rem;
+}
+
+.profile-picture {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.profile-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #333;
 }
