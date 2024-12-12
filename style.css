@@ -121,3 +121,22 @@ footer {
 .project a:hover {
     text-decoration: underline;
 }
+
+#resume p {
+    text-align: center;
+}
+
+#resume a {
+    display: inline-block;
+    background-color: #4CAF50; /* Highlight color */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#resume a:hover {
+    background-color: #45a049; /* Slightly darker shade on hover */
+}
