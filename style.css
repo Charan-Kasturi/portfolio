@@ -140,3 +140,25 @@ footer {
 #resume a:hover {
     background-color: #45a049; /* Slightly darker shade on hover */
 }
+
+.connect-icons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.connect-icons a {
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+
+.connect-icons a:hover {
+    transform: scale(1.2);
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
