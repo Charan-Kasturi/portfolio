@@ -4,20 +4,8 @@
     --primary-dark: #2E282A;
     --secondary-dark: #7E3E2F;
     --accent: #CD5334;
-
-    /* Light mode colors */
-    --bg-color: #f8f9fa;
-    --text-color: #2E282A;
-    --header-bg: var(--primary-dark);
-    --nav-bg: var(--accent);
-    --footer-bg: var(--primary-dark);
-    --card-bg: #ffffff;
-    --border-color: #e9ecef;
-    --shadow-light: rgba(0, 0, 0, 0.05);
-    --shadow-medium: rgba(0, 0, 0, 0.1);
 }
 
-/* Dark mode colors */
 [data-theme="dark"] {
     --bg-color: #1a1a1a;
     --text-color: #f5f5f5;
