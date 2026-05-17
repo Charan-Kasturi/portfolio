@@ -1,82 +1,76 @@
-// ── AOS init ────────────────────────────────────────
-AOS.init({ once: true, offset: 80, duration: 700 });
+// AOS
+AOS.init({ once: true, offset: 70, duration: 750 });
 
-// ── Navbar: shrink + active link on scroll ───────────
-const navbar = document.getElementById('navbar');
-
+// Navbar solid on scroll + active link
+const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 40);
-  updateActiveNav();
+  nav.classList.toggle('solid', window.scrollY > 50);
+  highlightNav();
 });
 
-function updateActiveNav() {
-  const sections = document.querySelectorAll('section[id]');
-  const links    = document.querySelectorAll('.nav-link');
+function highlightNav() {
+  const links = document.querySelectorAll('.nav-list a');
   let current = '';
-  sections.forEach(s => {
-    if (window.scrollY >= s.offsetTop - 130) current = s.id;
+  document.querySelectorAll('section[id]').forEach(s => {
+    if (window.scrollY >= s.offsetTop - 140) current = s.id;
   });
-  links.forEach(l => {
-    l.classList.toggle('active', l.getAttribute('href') === '#' + current);
-  });
+  links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
 }
 
-// ── Typed text ───────────────────────────────────────
-const words = ['Autonomous Robots', 'AI Systems', 'Computer Vision', 'ROS Applications', 'the Future'];
-let wi = 0, ci = 0, deleting = false;
-const typedEl = document.getElementById('typedText');
-
-function type() {
-  const word = words[wi];
-  if (!deleting) {
-    typedEl.textContent = word.slice(0, ++ci);
-    if (ci === word.length) { deleting = true; setTimeout(type, 1800); return; }
+// Typed text
+const words = ['AI Researcher', 'ROS Developer', 'ML Engineer', 'Computer Vision Expert'];
+let wi = 0, ci = 0, del = false;
+const el = document.getElementById('typed');
+function tick() {
+  const w = words[wi];
+  if (!del) {
+    el.textContent = w.slice(0, ++ci);
+    if (ci === w.length) { del = true; return setTimeout(tick, 2000); }
   } else {
-    typedEl.textContent = word.slice(0, --ci);
-    if (ci === 0) { deleting = false; wi = (wi + 1) % words.length; }
+    el.textContent = w.slice(0, --ci);
+    if (ci === 0) { del = false; wi = (wi + 1) % words.length; }
   }
-  setTimeout(type, deleting ? 55 : 95);
+  setTimeout(tick, del ? 50 : 90);
 }
-setTimeout(type, 900);
+setTimeout(tick, 800);
 
-// ── Counter animation ────────────────────────────────
-function animateCounters() {
-  document.querySelectorAll('.stat-num[data-target]').forEach(el => {
-    const target = +el.dataset.target;
-    let n = 0;
-    const step = () => {
-      n = Math.min(n + Math.ceil(target / 28), target);
-      el.textContent = n;
-      if (n < target) requestAnimationFrame(step);
-    };
+// Counter animation
+function runCounters() {
+  document.querySelectorAll('.bnum[data-to]').forEach(el => {
+    const target = +el.dataset.to, dur = 1000;
+    let start = null;
+    function step(ts) {
+      if (!start) start = ts;
+      const p = Math.min((ts - start) / dur, 1);
+      el.textContent = Math.floor(p * target);
+      if (p < 1) requestAnimationFrame(step);
+      else el.textContent = target;
+    }
     requestAnimationFrame(step);
   });
 }
+const obs = new IntersectionObserver(e => { if (e[0].isIntersecting) { runCounters(); obs.disconnect(); } }, { threshold: 0.4 });
+const abt = document.getElementById('about');
+if (abt) obs.observe(abt);
 
-const aboutObs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { animateCounters(); aboutObs.disconnect(); } });
-}, { threshold: 0.3 });
-const aboutSection = document.getElementById('about');
-if (aboutSection) aboutObs.observe(aboutSection);
+// Mobile menu
+const burger = document.getElementById('burger');
+const mobMenu = document.getElementById('mobMenu');
+const mobBg   = document.getElementById('mobBg');
+const mobClose = document.getElementById('mobClose');
 
-// ── Mobile drawer ────────────────────────────────────
-const hamburger   = document.getElementById('hamburger');
-const drawer      = document.getElementById('mobileDrawer');
-const overlay     = document.getElementById('mobileOverlay');
-const drawerClose = document.getElementById('drawerClose');
+function openMenu()  { mobMenu.classList.add('on'); mobBg.classList.add('on'); document.body.style.overflow = 'hidden'; }
+function closeMenu() { mobMenu.classList.remove('on'); mobBg.classList.remove('on'); document.body.style.overflow = ''; }
 
-function openDrawer()  { drawer.classList.add('open'); overlay.classList.add('open'); document.body.style.overflow = 'hidden'; }
-function closeDrawer() { drawer.classList.remove('open'); overlay.classList.remove('open'); document.body.style.overflow = ''; }
+burger.addEventListener('click', openMenu);
+mobClose.addEventListener('click', closeMenu);
+mobBg.addEventListener('click', closeMenu);
+document.querySelectorAll('.mob-link').forEach(l => l.addEventListener('click', closeMenu));
 
-hamburger  .addEventListener('click', openDrawer);
-overlay    .addEventListener('click', closeDrawer);
-drawerClose.addEventListener('click', closeDrawer);
-document.querySelectorAll('.drawer-link').forEach(l => l.addEventListener('click', closeDrawer));
-
-// ── Smooth scroll for all anchor links ───────────────
+// Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
-    const target = document.querySelector(a.getAttribute('href'));
-    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
   });
 });
