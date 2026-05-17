@@ -1,343 +1,499 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
-
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Venkata Sai Sricharan Kasturi - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charan Kasturi — Robotics Engineer</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <header>
-        <h1>Venkata Sai Sricharan Kasturi</h1>
-    </header>
-    <nav>
-        <div class="nav-links">
-            <a href="#about"><i class="fas fa-user"></i> About</a>
-            <a href="#education"><i class="fas fa-graduation-cap"></i> Education</a>
-            <a href="#skills"><i class="fas fa-code"></i> Skills</a>
-            <a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a>
-            <a href="#resume"><i class="fas fa-file-alt"></i> Resume</a>
-            <a href="#connect"><i class="fas fa-handshake"></i> Connect</a>
+
+  <!-- ── Navbar ────────────────────────────────────── -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">CK<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="#about"     class="nav-link">About</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#skills"    class="nav-link">Skills</a></li>
+        <li><a href="#projects"  class="nav-link">Projects</a></li>
+        <li><a href="#resume"    class="nav-link">Resume</a></li>
+        <li><a href="#connect"   class="nav-link">Contact</a></li>
+      </ul>
+      <a href="#connect" class="nav-cta">Hire Me</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile drawer -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-drawer" id="mobileDrawer">
+    <button class="drawer-close" id="drawerClose"><i class="fas fa-times"></i></button>
+    <ul>
+      <li><a href="#about"     class="drawer-link">About</a></li>
+      <li><a href="#education" class="drawer-link">Education</a></li>
+      <li><a href="#skills"    class="drawer-link">Skills</a></li>
+      <li><a href="#projects"  class="drawer-link">Projects</a></li>
+      <li><a href="#resume"    class="drawer-link">Resume</a></li>
+      <li><a href="#connect"   class="drawer-link">Contact</a></li>
+    </ul>
+    <div class="drawer-socials">
+      <a href="https://github.com/Charan-Kasturi"          target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/charan-kasturi/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="mailto:charan03@terpmail.umd.edu"                           ><i class="fas fa-envelope"></i></a>
+    </div>
+  </div>
+
+  <!-- ── Hero ──────────────────────────────────────── -->
+  <section id="home" class="hero">
+    <div class="hero-bg">
+      <div class="bg-grid"></div>
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+
+    <div class="hero-inner">
+      <!-- Text -->
+      <div class="hero-text" data-aos="fade-right" data-aos-duration="900">
+        <div class="hero-badge">
+          <span class="pulse-dot"></span>
+          Open to opportunities
         </div>
-        <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Light Mode">
-            <i class="fas fa-moon"></i>
-        </button>
-    </nav>
 
-    <main>
-        <section id="about">
-            <div class="profile-picture">
-                <img src="profile-pic.png" alt="Venkata Sai Sricharan Kasturi">
+        <h1 class="hero-heading">
+          <span class="line-1">Hi, I'm</span>
+          <span class="line-2">Charan<br><em>Kasturi</em></span>
+        </h1>
+
+        <div class="hero-role">
+          <span>I build&nbsp;</span>
+          <span class="typed-wrap">
+            <span id="typedText" class="typed"></span><span class="blink">|</span>
+          </span>
+        </div>
+
+        <p class="hero-bio">
+          Robotics Engineer specializing in autonomous systems, computer vision
+          &amp; deep learning. Master's graduate from University of Maryland.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">View Work <i class="fas fa-arrow-right"></i></a>
+          <a href="Resume_Charan_Kasturi.pdf" class="btn btn-outline" download>Download CV <i class="fas fa-download"></i></a>
+        </div>
+
+        <div class="social-links">
+          <a href="https://github.com/Charan-Kasturi"          target="_blank" class="social-link" title="GitHub">   <i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/charan-kasturi/" target="_blank" class="social-link" title="LinkedIn"> <i class="fab fa-linkedin-in"></i></a>
+          <a href="mailto:charan03@terpmail.umd.edu"                            class="social-link" title="Email">    <i class="fas fa-envelope"></i></a>
+          <a href="https://www.instagram.com/charan_kasturi/"   target="_blank" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <!-- Photo -->
+      <div class="hero-visual" data-aos="fade-left" data-aos-duration="900">
+        <div class="photo-wrap">
+          <div class="photo-ring ring-a"></div>
+          <div class="photo-ring ring-b"></div>
+          <div class="photo-glow"></div>
+          <img src="profile-pic.png" alt="Charan Kasturi" class="hero-photo">
+          <div class="photo-badge"><i class="fas fa-medal"></i> Honors Graduate</div>
+        </div>
+
+        <div class="float-card card-ros" data-aos="zoom-in" data-aos-delay="400">
+          <div class="float-icon"><i class="fas fa-robot"></i></div>
+          <div class="float-info">
+            <div class="float-label">Expertise</div>
+            <div class="float-value">ROS / ROS2</div>
+          </div>
+        </div>
+
+        <div class="float-card card-ai" data-aos="zoom-in" data-aos-delay="600">
+          <div class="float-icon"><i class="fas fa-brain"></i></div>
+          <div class="float-info">
+            <div class="float-label">Focus</div>
+            <div class="float-value">Deep Learning</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-down">
+      <div class="mouse"><div class="wheel"></div></div>
+      <span>Scroll</span>
+    </a>
+  </section>
+
+  <!-- ── About ──────────────────────────────────────── -->
+  <section id="about">
+    <div class="container">
+      <div class="section-label" data-aos="fade-up">01 — About</div>
+      <h2 data-aos="fade-up" data-aos-delay="100">Who I Am</h2>
+
+      <div class="about-layout">
+        <div class="about-copy" data-aos="fade-right" data-aos-delay="200">
+          <p class="lead">
+            I'm a Robotics Engineer building intelligent autonomous systems at the
+            intersection of AI, computer vision, and motion planning.
+          </p>
+          <p>
+            Currently completing my <strong>Master of Engineering in Robotics</strong> at the
+            <strong>University of Maryland, College Park</strong>, I specialize in autonomous navigation,
+            SLAM, and deep learning for real-world robotics. Originally from
+            <strong>Hyderabad, India</strong>, I've crossed continents to pursue cutting-edge research.
+          </p>
+          <p>
+            My projects span fully autonomous robot development with ROS &amp; C++,
+            reinforcement learning for self-driving cars, and real-time computer vision using
+            custom YOLO architectures. I thrive at the boundary of classical robotics and modern AI.
+          </p>
+          <p>When I'm not building robots, I'm watching cricket — or playing it.</p>
+
+          <div class="about-chips">
+            <div class="chip"><i class="fas fa-map-marker-alt"></i> College Park, MD</div>
+            <div class="chip"><i class="fas fa-graduation-cap"></i> M.Eng Robotics, UMD</div>
+            <div class="chip"><i class="fas fa-code-branch"></i> Open Source</div>
+            <div class="chip"><i class="fas fa-circle-dot"></i> Cricket Fan</div>
+          </div>
+        </div>
+
+        <div class="about-right" data-aos="fade-left" data-aos-delay="200">
+          <div class="stats-grid">
+            <div class="stat">
+              <span class="stat-num" data-target="6">0</span>+
+              <span class="stat-txt">Projects</span>
             </div>
-            <h2><i class="fas fa-user"></i> About Me</h2>
-            <p>Hi, I'm Charan Kasturi! I grew up in Hyderabad, India, where I discovered my love for technology and
-                cricket. After a journey filled with experiments and explorations, I've found myself in College Park,
-                Maryland, as a recent graduate with a Master's in Robotics from the University of Maryland. Along the
-                way, I've honed skills in ROS, C++, Python, and machine learning frameworks like PyTorch and TensorFlow.
-                I specialize in motion planning, computer vision, and autonomous navigation. Moving halfway across the
-                world, I'm still trying to figure out why I'm not a professional cricket player, but I've decided to
-                channel that energy into building smarter, adaptable robotics systems instead. Whether it's solving
-                real-world challenges or diving deep into innovative research, I thrive on creating impact through
-                technology.</p>
-        </section>
-
-        <section id="education">
-            <h2><i class="fas fa-graduation-cap"></i> Education</h2>
-            <div class="education-container">
-                <div class="education-card">
-                    <div class="education-header">
-                        <i class="fas fa-university"></i>
-                        <h3>University of Maryland</h3>
-                    </div>
-                    <div class="education-content">
-                        <p class="degree">Master of Engineering in Robotics</p>
-                        <p class="location">
-                            <i class="fas fa-map-marker-alt"></i>
-                            College Park, Maryland, USA
-                        </p>
-                    </div>
-                </div>
-
-                <div class="education-card">
-                    <div class="education-header">
-                        <i class="fas fa-university"></i>
-                        <h3>Guru Nanak Institutions</h3>
-                    </div>
-                    <div class="education-content">
-                        <p class="degree">Bachelor of Technology in Mechanical Engineering</p>
-                        <p class="location">
-                            <i class="fas fa-map-marker-alt"></i>
-                            Hyderabad, India
-                        </p>
-                    </div>
-                </div>
+            <div class="stat">
+              <span class="stat-num" data-target="15">0</span>+
+              <span class="stat-txt">Technologies</span>
             </div>
-        </section>
-
-        <section id="skills">
-            <h2><i class="fas fa-code"></i> Skills</h2>
-            <div class="skills-container">
-                <div class="skill-card programming">
-                    <div class="skill-header">
-                        <i class="fas fa-laptop-code"></i>
-                        <h3>Programming & Scripting</h3>
-                    </div>
-                    <div class="skill-content">
-                        <div class="skill-item">
-                            <img src="icons/c++.png" alt="C++" class="icon">
-                            <span>C++</span>
-                        </div>
-                        <div class="skill-item">
-                            <img src="icons/python.png" alt="Python" class="icon">
-                            <span>Python</span>
-                        </div>
-                        <div class="skill-item">
-                            <img src="icons/bash.png" alt="Shell/Bash" class="icon">
-                            <span>Shell/Bash</span>
-                        </div>
-                        <div class="skill-item">
-                            <img src="icons/matlab.png" alt="MATLAB" class="icon">
-                            <span>MATLAB</span>
-                        </div>
-                        <div class="skill-item">
-                            <img src="icons/html.png" alt="HTML" class="icon">
-                            <span>HTML</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-card tools">
-                    <div class="skill-header">
-                        <i class="fas fa-tools"></i>
-                        <h3>Tools and Technologies</h3>
-                    </div>
-                    <div class="skill-content">
-                        <div class="skill-item">
-                            <img src="icons/solidworks.png" alt="SolidWorks" class="icon">
-                            <span>SolidWorks</span>
-                        </div>
-                        <div class="skill-item">
-                            <img src="icons/ansys.png" alt="Ansys" class="icon">
-                            <span>Ansys</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-card frameworks">
-                    <div class="skill-header">
-                        <i class="fas fa-layer-group"></i>
-                        <h3>Frameworks</h3>
-                    </div>
-                    <div class="skill-content">
-                        <div class="skill-item">
-                            <img src="icons/linux.png" alt="Linux" class="icon">
-                            <span>Linux</span>
-                        </div>
-                        <div class="skill-item">
-                            <img src="icons/ROS.png" alt="ROS" class="icon">
-                            <span>ROS</span>
-                        </div>
-                        <div class="skill-item">
-                            <img src="icons/gazebo.png" alt="Gazebo" class="icon">
-                            <span>Gazebo</span>
-                        </div>
-                        <div class="skill-item">
-                            <img src="icons/rviz.jpg" alt="Rviz" class="icon">
-                            <span>Rviz</span>
-                        </div>
-                        <div class="skill-item">
-                            <img src="icons/labview.png" alt="LabVIEW" class="icon">
-                            <span>LabVIEW</span>
-                        </div>
-                        <div class="skill-item">
-                            <img src="icons/webots.png" alt="Webots" class="icon">
-                            <span>Webots</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-card libraries">
-                    <div class="skill-header">
-                        <i class="fas fa-book"></i>
-                        <h3>Libraries</h3>
-                    </div>
-                    <div class="skill-content">
-                        <div class="skill-item">
-                            <img src="icons/pandas.png" alt="Pandas" class="icon">
-                            <span>Pandas</span>
-                        </div>
-                        <div class="skill-item">
-                            <img src="icons/numpy.png" alt="NumPy" class="icon">
-                            <span>NumPy</span>
-                        </div>
-                        <div class="skill-item">
-                            <img src="icons/matplotlib.png" alt="Matplotlib" class="icon">
-                            <span>Matplotlib</span>
-                        </div>
-                        <div class="skill-item">
-                            <img src="icons/opencv.png" alt="OpenCV" class="icon">
-                            <span>OpenCV</span>
-                        </div>
-                        <div class="skill-item">
-                            <img src="icons/keras.png" alt="Keras" class="icon">
-                            <span>Keras</span>
-                        </div>
-                        <div class="skill-item">
-                            <img src="icons/tensorflow.png" alt="TensorFlow" class="icon">
-                            <span>TensorFlow</span>
-                        </div>
-                        <div class="skill-item">
-                            <img src="icons/pytorch.png" alt="PyTorch" class="icon">
-                            <span>PyTorch</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="stat">
+              <span class="stat-num" data-target="2">0</span>
+              <span class="stat-txt">Degrees</span>
             </div>
-        </section>
-
-        <section id="projects">
-            <h2><i class="fas fa-project-diagram"></i> Projects</h2>
-            <div class="projects">
-                <div class="project">
-                    <div class="project-header">
-                        <i class="fas fa-robot"></i>
-                        <h3>Development of an Autonomous Robot</h3>
-                    </div>
-                    <img src="project_files/project1.gif" alt="Project 1">
-                    <a href="https://github.com/Charan-Kasturi/Development-of-an-Autonomous-Robot" target="_blank">
-                        <i class="fab fa-github"></i> View on GitHub
-                    </a>
-                </div>
-                <div class="project">
-                    <div class="project-header">
-                        <i class="fas fa-mobile-alt"></i>
-                        <h3>MyDerma Mobile Deep Learning for Real Time Skin Cancer Detection</h3>
-                    </div>
-                    <img src="project_files/project2.gif" alt="Project 2">
-                    <a href="https://github.com/Charan-Kasturi/MyDerma-Mobile-Deep-Learning-for-Real-Time-Skin-Cancer-Detection"
-                        target="_blank">
-                        <i class="fab fa-github"></i> View on GitHub
-                    </a>
-                </div>
-                <div class="project">
-                    <div class="project-header">
-                        <i class="fas fa-car"></i>
-                        <h3>Advanced Reinforcement Learning with DQN for self driving car navigation</h3>
-                    </div>
-                    <img src="project_files/project3.gif" alt="Project 3">
-                    <a href="https://github.com/Charan-Kasturi/Advanced-Reinforcement-Learning-with-DQN-for-self-driving-car-navigation"
-                        target="_blank">
-                        <i class="fab fa-github"></i> View on GitHub
-                    </a>
-                </div>
-                <div class="project">
-                    <div class="project-header">
-                        <i class="fas fa-robot"></i>
-                        <h3>Design and Simulation of Mobile Manipulator Robot--Hand-E</h3>
-                    </div>
-                    <img src="project_files/project4.gif" alt="Project 4">
-                    <a href="https://github.com/Charan-Kasturi/Design-and-Simulation-of-Mobile-Manipulator-Robot--Hand-E"
-                        target="_blank">
-                        <i class="fab fa-github"></i> View on GitHub
-                    </a>
-                </div>
-                <div class="project">
-                    <div class="project-header">
-                        <i class="fas fa-camera"></i>
-                        <h3>Obstacle Detection and Recognition System using Customized YOLO Algorithm</h3>
-                    </div>
-                    <img src="project_files/project5.gif" alt="Project 5">
-                    <a href="https://github.com/Charan-Kasturi/Obstacle-Detection-and-Recognition-System-using-Customized-YOLO-Algorithm-for-a-Mobile-Robot"
-                        target="_blank">
-                        <i class="fab fa-github"></i> View on GitHub
-                    </a>
-                </div>
-                <div class="project">
-                    <div class="project-header">
-                        <i class="fas fa-map-marked-alt"></i>
-                        <h3>Path-Planning Using Optimized Double Tree RRT Star Algorithm</h3>
-                    </div>
-                    <img src="project_files/project6.gif" alt="Project 6">
-                    <a href="https://github.com/Charan-Kasturi/Path-Planning-Using-Optimized-Double-Tree-RRT-Star-Algorithm-for-Mobile-Robots"
-                        target="_blank">
-                        <i class="fab fa-github"></i> View on GitHub
-                    </a>
-                </div>
+            <div class="stat">
+              <span class="stat-num">&#8734;</span>
+              <span class="stat-txt">Curiosity</span>
             </div>
-            <div class="more-projects">
-                <a href="https://github.com/Charan-Kasturi?tab=repositories" target="_blank">
-                    <i class="fab fa-github"></i> More Projects on GitHub
-                </a>
+          </div>
+          <div class="about-img-card">
+            <img src="profile-pic.png" alt="Charan at UMD graduation">
+            <div class="img-caption">
+              <span>Honors Graduate</span>
+              <span>University of Maryland</span>
             </div>
-        </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <section id="resume">
-            <h2><i class="fas fa-file-alt"></i> Resume</h2>
-            <p><a href="Resume_Charan_Kasturi.pdf" download="Venkata_Sai_Sricharan_Kasturi_Resume.pdf"
-                    class="resume-download">
-                    <i class="fas fa-download"></i> Download My Resume
-                </a></p>
-        </section>
+  <!-- ── Education ──────────────────────────────────── -->
+  <section id="education" class="alt">
+    <div class="container">
+      <div class="section-label" data-aos="fade-up">02 — Education</div>
+      <h2 data-aos="fade-up" data-aos-delay="100">Academic Journey</h2>
 
-        <section id="connect">
-            <h2><i class="fas fa-handshake"></i> Connect</h2>
-            <div class="connect-icons">
-                <a href="https://github.com/Charan-Kasturi" target="_blank" title="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/charan-kasturi/" target="_blank" title="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="mailto:charan03@terpmail.umd.edu" title="Email">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <a href="https://www.instagram.com/charan_kasturi" target="_blank" title="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
+      <div class="timeline">
+        <div class="tl-item" data-aos="fade-up" data-aos-delay="150">
+          <div class="tl-icon"><i class="fas fa-university"></i></div>
+          <div class="tl-card">
+            <div class="tl-top">
+              <div>
+                <h3>Master of Engineering in Robotics</h3>
+                <span class="tl-school">University of Maryland, College Park</span>
+              </div>
+              <div class="tl-year">2023 – 2025</div>
             </div>
-        </section>
-    </main>
+            <p>Specializing in autonomous systems, motion planning, computer vision, and ML for robotics applications. Graduated with honors — recipient of University Medal.</p>
+            <div class="tl-tags">
+              <span>ROS / ROS2</span>
+              <span>Motion Planning</span>
+              <span>Computer Vision</span>
+              <span>Deep Learning</span>
+              <span>Autonomous Navigation</span>
+            </div>
+          </div>
+        </div>
 
-    <footer>
-        <p>© 2025 Venkata Sai Sricharan Kasturi</p>
-    </footer>
+        <div class="tl-item" data-aos="fade-up" data-aos-delay="250">
+          <div class="tl-icon"><i class="fas fa-university"></i></div>
+          <div class="tl-card">
+            <div class="tl-top">
+              <div>
+                <h3>B.Tech in Mechanical Engineering</h3>
+                <span class="tl-school">Guru Nanak Institutions Technical Campus, Hyderabad</span>
+              </div>
+              <div class="tl-year">2018 – 2022</div>
+            </div>
+            <p>Strong foundation in engineering fundamentals, CAD design, simulation, and applied mechanics — providing systems-level intuition now applied to robotics.</p>
+            <div class="tl-tags">
+              <span>CAD / SolidWorks</span>
+              <span>FEA / Ansys</span>
+              <span>MATLAB</span>
+              <span>Dynamics</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script>
-        // Theme toggle: dark mode is default, light mode is toggle
-        function toggleTheme() {
-            const html = document.documentElement;
-            const themeIcon = document.querySelector('.theme-toggle i');
-            if (html.getAttribute('data-theme') === 'dark') {
-                html.setAttribute('data-theme', 'light');
-                localStorage.setItem('theme', 'light');
-                themeIcon.classList.remove('fa-moon');
-                themeIcon.classList.add('fa-sun');
-            } else {
-                html.setAttribute('data-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
-                themeIcon.classList.remove('fa-sun');
-                themeIcon.classList.add('fa-moon');
-            }
-        }
-        // On load, set dark mode as default
-        document.addEventListener('DOMContentLoaded', function () {
-            const savedTheme = localStorage.getItem('theme');
-            const html = document.documentElement;
-            const themeIcon = document.querySelector('.theme-toggle i');
-            if (savedTheme === 'light') {
-                html.setAttribute('data-theme', 'light');
-                themeIcon.classList.remove('fa-moon');
-                themeIcon.classList.add('fa-sun');
-            } else {
-                html.setAttribute('data-theme', 'dark');
-                themeIcon.classList.remove('fa-sun');
-                themeIcon.classList.add('fa-moon');
-            }
-        });
-    </script>
+  <!-- ── Skills ─────────────────────────────────────── -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-label" data-aos="fade-up">03 — Skills</div>
+      <h2 data-aos="fade-up" data-aos-delay="100">Tech Stack</h2>
+
+      <div class="skills-grid">
+        <div class="skill-cat" data-aos="fade-up" data-aos-delay="100">
+          <div class="skill-cat-head"><i class="fas fa-code"></i><h3>Programming</h3></div>
+          <div class="skill-items">
+            <div class="sk"><img src="icons/c++.png"    alt="C++">       <span>C++</span></div>
+            <div class="sk"><img src="icons/python.png" alt="Python">    <span>Python</span></div>
+            <div class="sk"><img src="icons/bash.png"   alt="Bash">      <span>Shell/Bash</span></div>
+            <div class="sk"><img src="icons/matlab.png" alt="MATLAB">    <span>MATLAB</span></div>
+            <div class="sk"><img src="icons/html.png"   alt="HTML">      <span>HTML</span></div>
+          </div>
+        </div>
+
+        <div class="skill-cat" data-aos="fade-up" data-aos-delay="200">
+          <div class="skill-cat-head"><i class="fas fa-robot"></i><h3>Robotics &amp; Frameworks</h3></div>
+          <div class="skill-items">
+            <div class="sk"><img src="icons/ROS.png"      alt="ROS">     <span>ROS</span></div>
+            <div class="sk"><img src="icons/linux.png"    alt="Linux">   <span>Linux</span></div>
+            <div class="sk"><img src="icons/gazebo.png"   alt="Gazebo">  <span>Gazebo</span></div>
+            <div class="sk"><img src="icons/rviz.jpg"     alt="RViz">    <span>RViz</span></div>
+            <div class="sk"><img src="icons/webots.png"   alt="Webots">  <span>Webots</span></div>
+            <div class="sk"><img src="icons/labview.png"  alt="LabVIEW"><span>LabVIEW</span></div>
+          </div>
+        </div>
+
+        <div class="skill-cat" data-aos="fade-up" data-aos-delay="300">
+          <div class="skill-cat-head"><i class="fas fa-brain"></i><h3>ML / AI Libraries</h3></div>
+          <div class="skill-items">
+            <div class="sk"><img src="icons/pytorch.png"     alt="PyTorch">    <span>PyTorch</span></div>
+            <div class="sk"><img src="icons/tensorflow.png"  alt="TensorFlow"> <span>TensorFlow</span></div>
+            <div class="sk"><img src="icons/keras.png"       alt="Keras">      <span>Keras</span></div>
+            <div class="sk"><img src="icons/opencv.png"      alt="OpenCV">     <span>OpenCV</span></div>
+            <div class="sk"><img src="icons/numpy.png"       alt="NumPy">      <span>NumPy</span></div>
+            <div class="sk"><img src="icons/pandas.png"      alt="Pandas">     <span>Pandas</span></div>
+            <div class="sk"><img src="icons/matplotlib.png"  alt="Matplotlib"> <span>Matplotlib</span></div>
+          </div>
+        </div>
+
+        <div class="skill-cat" data-aos="fade-up" data-aos-delay="400">
+          <div class="skill-cat-head"><i class="fas fa-drafting-compass"></i><h3>Design &amp; Simulation</h3></div>
+          <div class="skill-items">
+            <div class="sk"><img src="icons/solidworks.png" alt="SolidWorks"><span>SolidWorks</span></div>
+            <div class="sk"><img src="icons/ansys.png"      alt="Ansys">     <span>Ansys</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Projects ───────────────────────────────────── -->
+  <section id="projects" class="alt">
+    <div class="container">
+      <div class="section-label" data-aos="fade-up">04 — Projects</div>
+      <h2 data-aos="fade-up" data-aos-delay="100">Featured Work</h2>
+
+      <div class="proj-grid">
+
+        <div class="proj-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="proj-media">
+            <img src="project_files/project1.gif" alt="Autonomous Robot">
+            <div class="proj-overlay">
+              <a href="https://github.com/Charan-Kasturi/Development-of-an-Autonomous-Robot" target="_blank" class="proj-github-btn">
+                <i class="fab fa-github"></i> View on GitHub
+              </a>
+            </div>
+            <div class="proj-num">01</div>
+          </div>
+          <div class="proj-body">
+            <h3>Autonomous Robot Development</h3>
+            <p>Fully autonomous mobile robot using ROS, C++ &amp; Python — capable of SLAM-based navigation, obstacle avoidance, and dynamic path planning in real environments.</p>
+            <div class="proj-tags"><span>ROS</span><span>C++</span><span>Python</span><span>SLAM</span></div>
+          </div>
+        </div>
+
+        <div class="proj-card" data-aos="fade-up" data-aos-delay="150">
+          <div class="proj-media">
+            <img src="project_files/project2.gif" alt="MyDerma">
+            <div class="proj-overlay">
+              <a href="https://github.com/Charan-Kasturi/MyDerma-Mobile-Deep-Learning-for-Real-Time-Skin-Cancer-Detection" target="_blank" class="proj-github-btn">
+                <i class="fab fa-github"></i> View on GitHub
+              </a>
+            </div>
+            <div class="proj-num">02</div>
+          </div>
+          <div class="proj-body">
+            <h3>MyDerma — Skin Cancer Detection</h3>
+            <p>Mobile deep learning app for real-time skin cancer classification using CNN architectures, achieving clinical-grade accuracy directly from a live camera feed.</p>
+            <div class="proj-tags"><span>CNN</span><span>PyTorch</span><span>OpenCV</span><span>Mobile AI</span></div>
+          </div>
+        </div>
+
+        <div class="proj-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="proj-media">
+            <img src="project_files/project3.gif" alt="DQN Self Driving">
+            <div class="proj-overlay">
+              <a href="https://github.com/Charan-Kasturi/Advanced-Reinforcement-Learning-with-DQN-for-self-driving-car-navigation" target="_blank" class="proj-github-btn">
+                <i class="fab fa-github"></i> View on GitHub
+              </a>
+            </div>
+            <div class="proj-num">03</div>
+          </div>
+          <div class="proj-body">
+            <h3>DQN Self-Driving Navigation</h3>
+            <p>Advanced Reinforcement Learning with Deep Q-Networks enabling autonomous vehicle navigation through complex road environments with real-time decision making.</p>
+            <div class="proj-tags"><span>Reinforcement Learning</span><span>DQN</span><span>TensorFlow</span></div>
+          </div>
+        </div>
+
+        <div class="proj-card" data-aos="fade-up" data-aos-delay="250">
+          <div class="proj-media">
+            <img src="project_files/project4.gif" alt="Hand-E Robot">
+            <div class="proj-overlay">
+              <a href="https://github.com/Charan-Kasturi/Design-and-Simulation-of-Mobile-Manipulator-Robot--Hand-E" target="_blank" class="proj-github-btn">
+                <i class="fab fa-github"></i> View on GitHub
+              </a>
+            </div>
+            <div class="proj-num">04</div>
+          </div>
+          <div class="proj-body">
+            <h3>Mobile Manipulator — Hand-E</h3>
+            <p>Design and Gazebo simulation of a mobile manipulator robot for industrial pick-and-place tasks, with full kinematics modeling in SolidWorks.</p>
+            <div class="proj-tags"><span>SolidWorks</span><span>Gazebo</span><span>ROS</span><span>Kinematics</span></div>
+          </div>
+        </div>
+
+        <div class="proj-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="proj-media">
+            <img src="project_files/project5.gif" alt="YOLO Obstacle">
+            <div class="proj-overlay">
+              <a href="https://github.com/Charan-Kasturi/Obstacle-Detection-and-Recognition-System-using-Customized-YOLO-Algorithm-for-a-Mobile-Robot" target="_blank" class="proj-github-btn">
+                <i class="fab fa-github"></i> View on GitHub
+              </a>
+            </div>
+            <div class="proj-num">05</div>
+          </div>
+          <div class="proj-body">
+            <h3>Custom YOLO Obstacle Detection</h3>
+            <p>Obstacle detection system using a customized YOLO architecture, delivering real-time performance optimized for onboard robotic perception systems.</p>
+            <div class="proj-tags"><span>YOLO</span><span>Computer Vision</span><span>Python</span><span>OpenCV</span></div>
+          </div>
+        </div>
+
+        <div class="proj-card" data-aos="fade-up" data-aos-delay="350">
+          <div class="proj-media">
+            <img src="project_files/project6.gif" alt="RRT* Path Planning">
+            <div class="proj-overlay">
+              <a href="https://github.com/Charan-Kasturi/Path-Planning-Using-Optimized-Double-Tree-RRT-Star-Algorithm-for-Mobile-Robots" target="_blank" class="proj-github-btn">
+                <i class="fab fa-github"></i> View on GitHub
+              </a>
+            </div>
+            <div class="proj-num">06</div>
+          </div>
+          <div class="proj-body">
+            <h3>Path Planning — Double Tree RRT*</h3>
+            <p>Optimized Double Tree RRT* algorithm for efficient path planning in complex environments, achieving significantly faster convergence than standard RRT*.</p>
+            <div class="proj-tags"><span>Path Planning</span><span>RRT*</span><span>Python</span><span>Algorithms</span></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="more-btn-wrap" data-aos="fade-up">
+        <a href="https://github.com/Charan-Kasturi?tab=repositories" target="_blank" class="btn btn-outline">
+          <i class="fab fa-github"></i> More on GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Resume ──────────────────────────────────────── -->
+  <section id="resume">
+    <div class="container">
+      <div class="resume-banner" data-aos="fade-up">
+        <div class="resume-left">
+          <div class="section-label">05 — Resume</div>
+          <h2>Want the full picture?</h2>
+          <p>Download my resume for a complete look at my experience, skills, and achievements.</p>
+        </div>
+        <a href="Resume_Charan_Kasturi.pdf" download class="btn btn-primary btn-lg">
+          <i class="fas fa-file-pdf"></i> Download Resume
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Connect ─────────────────────────────────────── -->
+  <section id="connect" class="alt">
+    <div class="container">
+      <div class="section-label" data-aos="fade-up">06 — Connect</div>
+      <h2 data-aos="fade-up" data-aos-delay="100">Let's Talk</h2>
+      <p class="connect-sub" data-aos="fade-up" data-aos-delay="200">
+        Whether it's a project, a job opportunity, or just a chat about robotics &amp; AI — I'm always up for it.
+      </p>
+
+      <div class="connect-grid">
+        <a href="https://github.com/Charan-Kasturi" target="_blank" class="connect-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="cc-icon"><i class="fab fa-github"></i></div>
+          <h3>GitHub</h3>
+          <p>Browse my code</p>
+          <span class="cc-handle">@Charan-Kasturi</span>
+        </a>
+        <a href="https://www.linkedin.com/in/charan-kasturi/" target="_blank" class="connect-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="cc-icon linkedin"><i class="fab fa-linkedin-in"></i></div>
+          <h3>LinkedIn</h3>
+          <p>Professional profile</p>
+          <span class="cc-handle">charan-kasturi</span>
+        </a>
+        <a href="mailto:charan03@terpmail.umd.edu" class="connect-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="cc-icon email"><i class="fas fa-envelope"></i></div>
+          <h3>Email</h3>
+          <p>Drop me a message</p>
+          <span class="cc-handle">charan03@terpmail.umd.edu</span>
+        </a>
+        <a href="https://www.instagram.com/charan_kasturi/" target="_blank" class="connect-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="cc-icon insta"><i class="fab fa-instagram"></i></div>
+          <h3>Instagram</h3>
+          <p>Follow my journey</p>
+          <span class="cc-handle">@charan_kasturi</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ──────────────────────────────────────── -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <a href="#home" class="footer-logo">CK<span>.</span></a>
+        <p>Designed &amp; built by <strong>Charan Kasturi</strong> &nbsp;·&nbsp; 2025</p>
+        <p class="footer-sub">Robotics Engineer · University of Maryland</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
 </body>
-
 </html>
