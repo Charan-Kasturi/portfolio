@@ -207,14 +207,14 @@ h1,h2,h3{font-family:'Space Grotesk',sans-serif;line-height:1.15}
 
 .photo-frame{
   position:relative;width:380px;max-width:100%;
+  display:flex;align-items:flex-end;justify-content:center;
 }
 
 .hero-img{
-  width:100%;aspect-ratio:3/4;
-  object-fit:cover;object-position:top center;
-  border-radius:16px;
-  border:1px solid rgba(255,81,0,0.2);
+  width:100%;
+  object-fit:contain;
   display:block;position:relative;z-index:2;
+  filter:drop-shadow(0 20px 60px rgba(255,81,0,0.18)) drop-shadow(0 0 120px rgba(139,92,246,0.08));
 }
 
 /* Accent corner brackets */
